@@ -10,10 +10,11 @@
 <body>
     <!-- Navbar -->
     <nav id="navbar" class="sticky">
-        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+        <div class="container">
             <a href="index.html" class="navbar-logo">
-                <img src="assets/images/image.png" alt="Dilli Shankar Logo">
+                <img src="dililogo.png" alt="Dilli Shankar Digital">
             </a>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -21,18 +22,23 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
-            <a href="contact.html" class="nav-cta">Contact Now</a>
+            
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="contact.html" class="nav-cta">Contact Now</a>
+                <button class="menu-toggle" id="menuBtn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <header style="padding: 150px 0 80px; text-align: center; background: radial-gradient(circle at bottom, rgba(41, 165, 227, 0.1), transparent);">
+    <header style="padding: 120px 0 30px; text-align: center; background: radial-gradient(circle at bottom, rgba(41, 165, 227, 0.1), transparent);">
         <div class="container" data-animate>
             <h1 class="text-gradient" style="font-size: 4rem;">Case Studies & Success Stories</h1>
             <p style="color: var(--text-gray); font-size: 1.2rem; margin-top: 1rem;">See how we've helped brands like yours grow exponentially.</p>
         </div>
     </header>
-
-    <section>
+    <section style="padding-top: 20px; padding-bottom: 20px;">
         <div class="container">
             <div class="portfolio-grid-v2">
                 
@@ -67,7 +73,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Project 3 -->
                 <div class="portfolio-card-v2" data-animate>
                     <div class="portfolio-thumb-container" style="background: radial-gradient(circle at center, #331133 0%, #000000 100%);">
@@ -102,12 +107,11 @@
 
             </div>
         </div>
-    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div style="text-align: center; color: var(--text-gray); font-size: 0.9rem; padding: 4rem 0;">
+            <div style="text-align: center; color: var(--text-gray); font-size: 0.9rem; padding: 2rem 0;">
                 &copy; 2026 Dilli Shankar Digital. All rights reserved.
             </div>
         </div>

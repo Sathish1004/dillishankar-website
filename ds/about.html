@@ -12,8 +12,9 @@
     <nav id="navbar" class="sticky">
         <div class="container">
             <a href="index.html" class="navbar-logo">
-                <img src="assets/images/image.png" alt="Dilli Shankar Logo">
+                <img src="dililogo.png" alt="Dilli Shankar Digital">
             </a>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -21,7 +22,12 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
-            <a href="contact.html" class="nav-cta">Contact Now</a>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="contact.html" class="nav-cta">Contact Now</a>
+                <button class="menu-toggle" id="menuBtn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -80,17 +86,23 @@
             </div>
             <div class="services-grid">
                 <div class="card" style="text-align: center;" data-animate>
-                    <div style="width: 120px; height: 120px; background: #2d3748; border-radius: 50%; margin: 0 auto 1.5rem;"></div>
+                    <div style="width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.5rem; overflow: hidden; border: 2px solid var(--primary);">
+                        <img src="assets/images/expert_ceo.png" alt="Alex Rivera" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
                     <h3>Alex Rivera</h3>
                     <p style="color: var(--primary); font-weight: 600;">CEO & Strategist</p>
                 </div>
                 <div class="card" style="text-align: center;" data-animate>
-                    <div style="width: 120px; height: 120px; background: #2d3748; border-radius: 50%; margin: 0 auto 1.5rem;"></div>
+                    <div style="width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.5rem; overflow: hidden; border: 2px solid var(--primary);">
+                        <img src="assets/images/expert_seo.png" alt="Elena Smith" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
                     <h3>Elena Smith</h3>
                     <p style="color: var(--primary); font-weight: 600;">SEO Specialist</p>
                 </div>
                 <div class="card" style="text-align: center;" data-animate>
-                    <div style="width: 120px; height: 120px; background: #2d3748; border-radius: 50%; margin: 0 auto 1.5rem;"></div>
+                    <div style="width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1.5rem; overflow: hidden; border: 2px solid var(--primary);">
+                        <img src="assets/images/expert_creative.png" alt="Jordan Lee" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
                     <h3>Jordan Lee</h3>
                     <p style="color: var(--primary); font-weight: 600;">Creative Director</p>
                 </div>

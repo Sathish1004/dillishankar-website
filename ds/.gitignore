@@ -1,4 +1,25 @@
-# Logs
+Create a modern “Our Work” section for a website using HTML, CSS, and JavaScript.
+
+Requirements:
+
+Display projects in a horizontal slider (carousel) layout
+The slider should be automatic (auto-scroll) and loop continuously
+Use a curved / 3D perspective carousel effect (like a rotating gallery)
+Each item should be a card/box design with:
+Image
+Title
+Category (e.g., Digital Marketing)
+Hover effect (scale or glow)
+Center item should appear larger, side items slightly smaller (depth effect)
+Smooth transitions and animations
+Fully responsive (mobile + desktop)
+Use clean modern UI (dark theme preferred)
+
+Bonus:
+
+Add navigation arrows or dots
+Pause on hover
+Use CSS transform (scale, rotateY) for 3D effect# Logs
 logs
 *.log
 npm-debug.log*

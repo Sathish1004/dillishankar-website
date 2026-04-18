@@ -32,8 +32,9 @@
     <nav id="navbar" class="sticky">
         <div class="container">
             <a href="index.html" class="navbar-logo">
-                <img src="assets/images/image.png" alt="Dilli Shankar Logo">
+                <img src="dililogo.png" alt="Dilli Shankar Digital">
             </a>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -41,7 +42,12 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
-            <a href="contact.html" class="nav-cta">Contact Now</a>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="contact.html" class="nav-cta">Contact Now</a>
+                <button class="menu-toggle" id="menuBtn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -79,8 +85,15 @@
                     </div>
                     
                     <!-- Map Placeholder -->
-                    <div style="margin-top: 4rem; background: #0d0d0d; border: 1px solid var(--glass-border); border-radius: 24px; height: 300px; display: flex; align-items: center; justify-content: center;" data-animate>
-                        <p style="color: var(--text-gray);"><i data-lucide="map-pin" style="vertical-align: middle; margin-right: 10px;"></i> [Google Map Embed Placeholder]</p>
+                    <div class="map-container" data-animate>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.88653926!2d80.0443632!3d13.0474878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d333f%3A0x6b3a74f1d51bb50c!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1713430000000!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; filter: invert(90%) hue-rotate(180deg) brightness(0.8);" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
                     </div>
                 </div>
 
@@ -94,8 +107,8 @@
                         <input type="hidden" name="_autoresponse" value="Thank you for reaching out to Dilli Shankar Digital. We have received your inquiry and will be in touch shortly.">
 
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                            <input type="email" name="email" placeholder="Email Address" required>
+                            <input type="text" name="name" placeholder="Your Name *" required title="Please enter your name">
+                            <input type="email" name="email" placeholder="Email Address *" required title="Please enter a valid email address">
                         </div>
                         <input type="tel" name="phone" placeholder="Phone Number">
                         <input type="text" name="business" placeholder="Business Name">

@@ -61,26 +61,155 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mobile Menu Toggle (Simplified)
+    // Mobile Menu Toggle
     const menuBtn = document.getElementById('menuBtn');
-    if (menuBtn) {
-        menuBtn.addEventListener('click', () => {
-            alert("Mobile menu clicked! In a full implementation, this would open a slide-out drawer.");
+    const navLinks = document.querySelector('.nav-links');
+    const navOverlay = document.createElement('div');
+    navOverlay.className = 'nav-overlay';
+    document.body.appendChild(navOverlay);
+    
+    if (menuBtn && navLinks) {
+        const toggleMenu = () => {
+            navLinks.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            const icon = menuBtn.querySelector('i') || menuBtn.querySelector('svg');
+            if (icon) {
+                if (navLinks.classList.contains('active')) {
+                    icon.setAttribute('data-lucide', 'x');
+                } else {
+                    icon.setAttribute('data-lucide', 'menu');
+                }
+                lucide.createIcons();
+            }
+        };
+
+        menuBtn.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                navOverlay.classList.remove('active');
+                const icon = menuBtn.querySelector('i') || menuBtn.querySelector('svg');
+                if (icon) {
+                    icon.setAttribute('data-lucide', 'menu');
+                    lucide.createIcons();
+                }
+            });
         });
     }
 
     // Number Counter Animation for Stats
     function animateValue(obj, start, end, duration) {
+        if (!obj) return;
         let startTimestamp = null;
         const step = (timestamp) => {
             if (!startTimestamp) startTimestamp = timestamp;
             const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            obj.innerHTML = Math.floor(progress * (end - start) + start) + (end === 350 ? '+' : '+');
+            obj.innerHTML = Math.floor(progress * (end - start) + start) + '+';
             if (progress < 1) {
                 window.requestAnimationFrame(step);
             }
         };
         window.requestAnimationFrame(step);
+    }
+
+    // 3D Work Carousel Logic
+    const workCarousel = document.getElementById('workCarousel');
+    if (workCarousel) {
+        const stage = workCarousel;
+        const cards = stage.querySelectorAll('.carousel-card');
+        const dotsContainer = document.getElementById('workDots');
+        const prevBtn = document.getElementById('prevWork');
+        const nextBtn = document.getElementById('nextWork');
+        
+        let currentIndex = Math.floor(cards.length / 2);
+        let interval;
+        const totalCards = cards.length;
+
+        // Create dots
+        cards.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === currentIndex) dot.classList.add('active');
+            dot.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = dotsContainer.querySelectorAll('.dot');
+
+        function updateCarousel() {
+            cards.forEach((card, i) => {
+                let offset = i - currentIndex;
+                
+                // Handle circular wrap slightly purely for visual distribution
+                const absOffset = Math.abs(offset);
+                
+                // 3D Transform Logic
+                const translateX = offset * 250;
+                const rotateY = offset * -35;
+                const translateZ = absOffset * -400;
+                const scale = 1 - (absOffset * 0.15);
+                const opacity = 1 - (absOffset * 0.3);
+                
+                card.style.transform = `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
+                card.style.opacity = opacity;
+                card.style.zIndex = 10 - absOffset;
+                
+                if (offset === 0) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        function next() {
+            currentIndex = (currentIndex + 1) % totalCards;
+            updateCarousel();
+        }
+
+        function prev() {
+            currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+            updateCarousel();
+        }
+
+        function goTo(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+
+        function startAutoScroll() {
+            interval = setInterval(next, 4000);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(interval);
+        }
+
+        prevBtn.addEventListener('click', () => {
+            prev();
+            stopAutoScroll();
+            startAutoScroll();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            next();
+            stopAutoScroll();
+            startAutoScroll();
+        });
+
+        workCarousel.addEventListener('mouseenter', stopAutoScroll);
+        workCarousel.addEventListener('mouseleave', startAutoScroll);
+
+        // Initial setup
+        updateCarousel();
+        startAutoScroll();
     }
 
     const statsSection = document.querySelector('.stats') || document.querySelector('.hero');

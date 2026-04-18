@@ -10,10 +10,11 @@
 <body>
     <!-- Navbar -->
     <nav id="navbar" class="sticky">
-        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+        <div class="container">
             <a href="index.html" class="navbar-logo">
-                <img src="assets/images/image.png" alt="Dilli Shankar Logo">
+                <img src="dililogo.png" alt="Dilli Shankar Digital">
             </a>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -21,7 +22,12 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
-            <a href="contact.html" class="nav-cta">Contact Now</a>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="contact.html" class="nav-cta">Contact Now</a>
+                <button class="menu-toggle" id="menuBtn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -35,44 +41,87 @@
     <section>
         <div class="container">
             
-            <!-- Service 1: SEO -->
+            <!-- Service 1: Web Development -->
             <div class="service-detail-item" data-animate>
-                <img src="assets/images/service_seo_analytics_1776324511692.png" alt="SEO & SEM">
+                <img src="assets/images/web_dev_mockup.png" alt="Web Development">
                 <div>
                     <span class="service-num">Service 1</span>
-                    <h2>SEO and SEM</h2>
+                    <h2>Web Development<span style="color: var(--primary);">.</span></h2>
                     <p>
-                        SEO and SEM boost your website's visibility and attract targeted traffic. Our SEO optimizes content for higher organic rankings, while SEM delivers quick results with targeted paid ads. Through keyword research and performance tracking, we maximize online reach. Let us help drive growth and connect you with the right audience.
+                        Building future-ready websites that are fast, secure, and conversion-optimized. We specialize in custom development, landing pages, and complex web applications that reflect your brand's unique identity and drive results.
                     </p>
-                    <a href="contact.html" class="btn btn-primary" style="margin-top: 2rem; border-radius: 10px;">Get Started</a>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 2rem; border-radius: 10px;">Build My Website</a>
                 </div>
             </div>
 
-            <!-- Service 2: Content Marketing -->
+            <!-- Service 2: Meta Ads -->
             <div class="service-detail-item" data-animate>
                 <div style="order: 2;">
-                    <img src="assets/images/service_content_marketing_1776324358965.png" alt="Content Marketing">
+                    <img src="assets/images/meta_ads_mockup.png" alt="Meta Ads Marketing">
                 </div>
                 <div style="order: 1;">
                     <span class="service-num">Service 2</span>
-                    <h2>Content Marketing</h2>
+                    <h2>Meta Ads Marketing<span style="color: var(--primary);">.</span></h2>
                     <p>
-                        Content Marketing helps attract and engage audiences through valuable, relevant content tailored to your brand. We create blogs, videos, and infographics that boost SEO, drive traffic, and build trust. Our data-driven approach ensures each piece aligns with your goals, enhancing brand credibility. Connect authentically with your audience through content that matters.
+                        Targeted advertising on Facebook and Instagram. We create high-converting ad copies and creatives that lower your Customer Acquisition Cost (CAC) and boost your Return on Ad Spend (ROAS) exponentially through precise audience targeting.
                     </p>
-                    <a href="contact.html" class="btn btn-primary" style="margin-top: 2rem; border-radius: 10px;">Learn More</a>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 2rem; border-radius: 10px;">Launch Meta Ads</a>
                 </div>
             </div>
 
-            <!-- Service 3: Social Media -->
+            <!-- Service 3: Google Ads -->
             <div class="service-detail-item" data-animate>
-                <img src="assets/images/service_social_media_1776324393143.png" alt="Social Media">
+                <img src="assets/images/google_ads_mockup.png" alt="Google Ads">
                 <div>
                     <span class="service-num">Service 3</span>
-                    <h2>Social Media Page Handling</h2>
+                    <h2>Google Ads (PPC)<span style="color: var(--primary);">.</span></h2>
                     <p>
-                        Social Media Page Handling ensures your brand's online presence is active and engaging. We manage content, interactions, and platform trends to keep your brand visible and consistent. Our approach fosters community and builds trust with your audience. Let us handle your social media while you focus on growth.
+                        Capture intent where it matters most. Our Google Ads strategies focus on high-impact keywords, search ads, and remarketing to place your business in front of customers at the exact moment they are looking for your services.
                     </p>
-                    <a href="contact.html" class="btn btn-primary" style="margin-top: 2rem; border-radius: 10px;">Get Consultation</a>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 2rem; border-radius: 10px;">Get More Leads</a>
+                </div>
+            </div>
+
+            <!-- Service 4: SEO -->
+            <div class="service-detail-item" data-animate>
+                <div style="order: 2;">
+                    <img src="assets/images/service_seo_analytics_1776324511692.png" alt="SEO Service">
+                </div>
+                <div style="order: 1;">
+                    <span class="service-num">Service 4</span>
+                    <h2>Search Engine Optimization<span style="color: var(--primary);">.</span></h2>
+                    <p>
+                        Dominating search results organically. Our data-driven SEO strategies improve your rankings, increase organic traffic, and establish your brand authority without the recurring costs of paid advertising.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 2rem; border-radius: 10px;">Audit My Site</a>
+                </div>
+            </div>
+
+            <!-- Service 5: Social Media -->
+            <div class="service-detail-item" data-animate>
+                <img src="assets/images/service_social_media_1776324393143.png" alt="Social Media Marketing">
+                <div>
+                    <span class="service-num">Service 5</span>
+                    <h2>Social Media Marketing<span style="color: var(--primary);">.</span></h2>
+                    <p>
+                        Building communities, not just follower counts. We manage your social presence, engage with your audience across all platforms, and build long-term brand loyalty through creative storytelling and community management.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 2rem; border-radius: 10px;">Grow Socially</a>
+                </div>
+            </div>
+
+            <!-- Service 6: Content Marketing -->
+            <div class="service-detail-item" data-animate>
+                <div style="order: 2;">
+                    <img src="assets/images/service_content_marketing_1776324358965.png" alt="Content Marketing Service">
+                </div>
+                <div style="order: 1;">
+                    <span class="service-num">Service 6</span>
+                    <h2>Content Marketing<span style="color: var(--primary);">.</span></h2>
+                    <p>
+                        Value-first marketing that converts. We create blogs, infographics, and videos that solve real problems for your customers, building trust and driving long-term, sustainable growth for your business.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 2rem; border-radius: 10px;">Plan Content</a>
                 </div>
             </div>
 
