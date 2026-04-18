@@ -108,7 +108,10 @@ nav .container {
 
 @media (max-width: 768px) {
     .navbar-logo img {
-        height: 54px; /* Reduced by 10% as requested */
+        height: 200px; /* Ultra-sized for mobile presence */
+    }
+    nav {
+        padding: 0 !important;
     }
 }
 
